@@ -26,10 +26,6 @@ input {
   margin-bottom: 12x;
 }
 
-input[type=submit] {
-  float:right;
-}
-
 form {
   width:270px;
 }

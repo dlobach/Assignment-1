@@ -8,23 +8,26 @@
   <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body>
+<body onload="checkStorageGB()">
   <h1>Sign our guest list below</h1>
   <form action="#" onsubmit="return submitForm(this.name.value, this.hometown.value)">
     <label>Name:</label>
     <input id="name" /><br />
     <label>Hometown:</label>
     <input id="hometown"/><br />
+    <label></label>
     <input type="submit" />
   </form>
   <h2>Guest List</h2>
   <ol id="guestlist">
     <!-- Example data
     <li>Daniel Spaniel. Durhamiel, North Caroliniel</li>
-    <li>N8 Smallg8. H8town, AL</li>
+    <li>N8 Smallg8. G8tortown, AL</li>
     -->
   </ol>
+  <a href="#" onclick="if (confirm('are you sure?')) { clearStorageGB(); } return false;">reset guestlist</a><br />
   <a href="index.html">Return to home page</a>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="script.js"></script>
 <body>
 
