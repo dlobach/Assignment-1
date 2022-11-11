@@ -26,10 +26,25 @@ function saveRemote(name, hometown) {
   $.get("save.php",{"name":name,"hometown":hometown});
 }
 
+function loadRemote() {
+  $.get("load.php",{},function(data) { 
+    data = JSON.parse(data);
+    console.log(data);
+    console.log("row by row:");
+    var html = "";
+    for (var i in data) {
+      console.log(data[i]);
+      if (data[i])
+        html += "<li>" + data[i] + "</li>";
+    }
+    $("#guestlist").html(html);
+  });
+}
+
 function clearStorageGB() {
   //var guestlist = document.getElementById("guestlist");
   //guestlist.innerHTML = "";
-  $("#guestlist").html("The guestlist done been cleared bruh.");
+  $("#guestlist").html("The guestlist done been cleared bro.");
   localStorage.setItem("guestlist","");
 }
 
